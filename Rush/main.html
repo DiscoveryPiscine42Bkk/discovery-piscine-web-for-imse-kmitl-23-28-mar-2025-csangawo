@@ -90,35 +90,48 @@
             .button:hover {
                 background-color: #919191;
             }
-        .contact-link {
-            font-size: 16px;
-        color: #ffffff;
-         text-decoration: none;
-            padding-left: 10px;
-        }
 
-        .contact-link:hover {
-            color: #cccccc;
-        }
+            .contact-link {
+                font-size: 16px;
+                color: #ffffff;
+                text-decoration: none;
+                padding-left: 10px;
+            }
+
+            .contact-link:hover {
+                color: #cccccc;
+            }
+
+            .image-above-content {
+                position: absolute; /* Absolute position to place it where you want */
+                top: 10%; /* Change this to move the image vertically */
+                left: 50%; /* Change this to move the image horizontally */
+                transform: translateX(-50%); /* Center it horizontally */
+                width: 30%;
+                height: auto;
+                max-height: 1000px;
+                object-fit: cover;
+                z-index: 2; /* Ensure it stays on top of other content */
+            }
         </style>
     </head>
     <body>
 
         <div class="parallax">
+
+            <img src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png" alt="Image Above Main Content" class="image-above-content">
+            
             <div class="content">
-                <h1>MAIN</h1>
-                <p>My Portfolio</p>
+                <h1>name</h1>
+                <p>Sound Engineer</p>
             </div>
         </div>
 
-        
-
         <div class="copyright">
             <div>© csangwo 2025</div>
-            <div></div><a href="mailto:67160007@kmitl.ac.th" class="contact-link">Contact</a>
-                <a href="page1.html" class="button">Go to Page 1</a>
-                <a href="page2.html" class="button">Go to Page 2</a>
-            </div>
+            <div><a href="mailto:67160007@kmitl.ac.th" class="contact-link">Contact</a></div>
+            <a href="page1.html" class="button">Go to Page 1</a>
+            <a href="page2.html" class="button">Go to Page 2</a>
         </div>
         
         <div id="navbar"></div>
