@@ -5,14 +5,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Image Background Example</title>
         <style>
-            body {
+            .parallax {
                 background-image: url('https://www.bianquzy.com/wp-content/uploads/2020/01/6181_1415777444.png'); 
                 background-size: cover; 
                 background-position: center; 
                 height: 100vh; 
                 margin: 0; 
             }
+            .parallax::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Black tint with opacity */
+                z-index: 1; /* Ensures the overlay sits above the background image */
+            }
+            .content {
+                position: relative;
+                z-index: 2; /* Content appears above the overlay */
+                text-align: center;
+                color: white;
+                padding-top: 40vh; /* Adjust to position content vertically */
+            }
+
         </style>
 
     </head>
+    <body>
+
+        <div class="parallax">
+            <div class="content">
+                <h1>Parallax with Black Tint</h1>
+                <p>This is an example of a parallax background with a black tint overlay.</p>
+            </div>
+        </div>
+    
+        <div style="height: 100vh; background: #f4f4f4;">
+            <h2>Scroll Down to See the Effect</h2>
+        </div>
+    
+    </body>
 </html>
