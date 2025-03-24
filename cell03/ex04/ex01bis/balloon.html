@@ -3,64 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Calculator</title>
+    <title>Balloon Effect</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+        .completed {
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
 </head>
 <body>
 
-    <input type="number" id="leftOperand" placeholder="Left operand">
-    <select id="operator">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-        <option value="%">%</option>
-    </select>
-    <input type="number" id="rightOperand" placeholder="Right operand">
-    <input type="button" value="Try me!" id="calculateButton">
+    <div id="balloon"></div>
 
     <script>
-        document.getElementById('calculateButton').addEventListener('click', function() {
-            const leftOperand = parseInt(document.getElementById('leftOperand').value);
-            const rightOperand = parseInt(document.getElementById('rightOperand').value);
-            const operator = document.getElementById('operator').value;
+        $(document).ready(function() {
+            let size = 200;
+            const colors = ['red', 'green', 'blue'];
+            let currentColorIndex = 0;
 
-            if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
-                alert('Error :(');
-                return;
-            }
+            $('#balloon').on('click', function() {
+                if (size >= 420) {
+                    size = 200;
+                    $(this).css('width', size);
+                    $(this).css('height', size);
+                    $(this).css('background-color', 'red');
+                } else {
+                    size += 10;
+                    currentColorIndex = (currentColorIndex + 1) % colors.length;
+                    $(this).css('width', size);
+                    $(this).css('height', size);
+                    $(this).css('background-color', colors[currentColorIndex]);
+                }
+            });
 
-            if (operator === '/' && rightOperand === 0 || operator === '%' && rightOperand === 0) {
-                alert("It’s over 9000!");
-                return;
-            }
-
-            let result;
-
-            switch (operator) {
-                case '+':
-                    result = leftOperand + rightOperand;
-                    break;
-                case '-':
-                    result = leftOperand - rightOperand;
-                    break;
-                case '*':
-                    result = leftOperand * rightOperand;
-                    break;
-                case '/':
-                    result = leftOperand / rightOperand;
-                    break;
-                case '%':
-                    result = leftOperand % rightOperand;
-                    break;
-            }
-
-            alert(`Result: ${result}`);
-            console.log(result);
+            $('#balloon').on('mouseenter', function() {
+                size -= 5;
+                if (size < 200) size = 200;
+                currentColorIndex = (currentColorIndex - 1 + colors.length) % colors.length;
+                $(this).css('width', size);
+                $(this).css('height', size);
+                $(this).css('background-color', colors[currentColorIndex]);
+            });
         });
-
-        setInterval(function() {
-            alert('Please, use me...');
-        }, 30000);
     </script>
 
 </body>
