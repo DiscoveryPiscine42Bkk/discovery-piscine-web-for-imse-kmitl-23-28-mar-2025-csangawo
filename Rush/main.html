@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Image Background Example</title>
         <style>
             body, html {
@@ -10,16 +8,16 @@
                 padding: 0;
                 height: 100%;
             }
-    
+
             .parallax {
                 position: relative;
-                background-image: url('https://www.bianquzy.com/wp-content/uploads/2020/01/6181_1415777444.png'); /* Replace with your image URL */
+                background-image: url('https://www.bianquzy.com/wp-content/uploads/2020/01/6181_1415777444.png'); 
                 background-size: cover;
                 background-position: center;
-                background-attachment: fixed; /* Parallax effect */
-                height: 100vh; /* Full viewport height */
+                background-attachment: fixed; 
+                height: 100vh; 
             }
-    
+
             .parallax::after {
                 content: '';
                 position: absolute;
@@ -27,36 +25,64 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.5); /* Black tint with opacity */
-                z-index: 1; /* Ensures the overlay sits above the background image */
+                background-color: rgba(0, 0, 0, 0.5); 
+                z-index: 1; 
             }
-    
+
             .content {
                 position: relative;
-                z-index: 2; /* Content appears above the overlay */
+                z-index: 2; 
                 text-align: center;
                 color: white;
-                padding-top: 40vh; /* Adjust to position content vertically */
+                padding-top: 40vh; 
             }
-    
+
             h1 {
                 font-size: 3em;
                 margin: 0;
             }
-    
+
             p {
                 font-size: 1.5em;
             }
-.copyright {
-            text-align: right; /* Align text to the right */
-            font-style: italic; /* Italicize the text */
-            font-family: 'Courier New', Courier, monospace; /* Monospace font */
-            font-size: 14px; /* Set the font size */
-            color: #333; /* Text color */
-            margin-right: 20px; /* Add some space from the right edge */
-        }
-        </style>
 
+            .copyright {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                font-style: italic;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 14px;
+                color: #ffffff;
+                background: #161616;
+            }
+
+            .copyright a {
+                font-size: 16px;
+                text-decoration: none;
+                color: #333;
+            }
+
+            .button {
+                background-color: #4e4e4e; 
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            .button:hover {
+                background-color: #d3d3d3;
+            }
+        </style>
     </head>
     <body>
 
@@ -66,11 +92,18 @@
                 <p>My Portfolio</p>
             </div>
         </div>
-    
-        <hr>
 
-        <div class="copyright" style="height: 100vh; background: #ffffff;">
-            © csangwo 2025
+        
+
+        <div class="copyright">
+            <div>© csangwo 2025</div>
+            <div>
+                <a href="page1.html" class="button">Go to Page 1</a>
+                <a href="page2.html" class="button">Go to Page 2</a>
+            </div>
         </div>
+        
+        
+
     </body>
 </html>
