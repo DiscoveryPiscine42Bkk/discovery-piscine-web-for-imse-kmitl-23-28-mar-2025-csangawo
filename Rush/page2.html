@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Button to main.html</title>
+    <link rel="stylesheet" href="styles.css">
+        <script>
+            window.onload = function() {
+                fetch('navbar.html')
+                    .then(response => response.text())
+                    .then(data => document.getElementById('navbar').innerHTML = data);
+            };
+        </script>
     <style>
         body {
             margin: 0;
@@ -35,6 +41,10 @@
     </style>
 </head>
 <body>
+    <div>
     <a href="main.html" class="button">Go to main.html</a>
+    </div>
+
+    <div id="navbar"></div>
 </body>
 </html>

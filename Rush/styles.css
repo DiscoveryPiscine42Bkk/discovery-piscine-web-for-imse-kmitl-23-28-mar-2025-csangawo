@@ -1,0 +1,48 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #161616;
+    padding: 10px 0;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+body {
+    margin-top: 60px; /* Offset the body content so it doesn't overlap the navbar */
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center; /* Centers the links */
+}
+
+/* Styling for each list item */
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Styling the anchor tags (links) in the navbar */
+nav ul li a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size */
+    font-family: 'Arial', sans-serif; /* Font family */
+    font-weight: bold; /* Bold text */
+    padding: 10px 20px; /* Padding for spacing */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Change the background color of the link when hovered */
+nav ul li a:hover {
+    background-color: #575757; /* Darker grey when hovered */
+    border-radius: 5px; /* Rounded corners for the hover effect */
+    color: #fff; /* Ensures text stays white */
+}
+
+
+nav ul li a:focus {
+    outline: 2px solid #ff9800; 
+}
