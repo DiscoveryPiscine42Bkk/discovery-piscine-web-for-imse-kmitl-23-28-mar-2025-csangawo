@@ -111,10 +111,12 @@
         }
         .content {
             position: relative;
-                z-index: 2; 
-                text-align: center;
-                color: rgb(0, 0, 0);
-                padding-top: 10vh; 
+            z-index: 2; 
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(255, 255, 255);
+            padding-top: 5vh; 
+            background: rgb(26, 26, 26);
         }
     
         .contact-link {
@@ -126,6 +128,19 @@
 
         .contact-link:hover {
             color: #cccccc;
+        }
+
+        .player-container {
+            display: flex;
+            flex-direction: column; /* Stack players vertically */
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Add spacing between players */
+            height: 100vh; /* Full viewport height */
+        }
+
+        iframe {
+            border-radius: 10px; /* Optional: Add rounded corners */
         }
     </style>
 </head>
@@ -141,5 +156,31 @@
     <div class="copyright">
         <div>© csangwo 2025</div><a href="mailto:67160007@kmitl.ac.th" class="contact-link">Contact</a>
     </div>
+    <div class="content">
+    <h1>experiences</h1>
+    <!-- Embed SoundCloud players -->
+    <div class="player-container">
+        <!-- First SoundCloud player -->
+        <iframe 
+            width="300" 
+            height="300" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/therealraser/tinted-perspectivefeat-atiryc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
+
+        <!-- Second SoundCloud player -->
+        <iframe 
+            width="300" 
+            height="300" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/therealraser/focused-force&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+        </iframe>
+        <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Ftherealraser&color=orange_white&size=32" style="width: 32px; height: 32px;"></iframe>soundcloud
+    </div>
+</div>
 </body>
 </html>
