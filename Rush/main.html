@@ -5,13 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Image Background Example</title>
         <style>
-            .parallax {
-                background-image: url('https://www.bianquzy.com/wp-content/uploads/2020/01/6181_1415777444.png'); 
-                background-size: cover; 
-                background-position: center; 
-                height: 100vh; 
-                margin: 0; 
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
             }
+    
+            .parallax {
+                position: relative;
+                background-image: url('https://www.bianquzy.com/wp-content/uploads/2020/01/6181_1415777444.png'); /* Replace with your image URL */
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed; /* Parallax effect */
+                height: 100vh; /* Full viewport height */
+            }
+    
             .parallax::after {
                 content: '';
                 position: absolute;
@@ -22,6 +30,7 @@
                 background-color: rgba(0, 0, 0, 0.5); /* Black tint with opacity */
                 z-index: 1; /* Ensures the overlay sits above the background image */
             }
+    
             .content {
                 position: relative;
                 z-index: 2; /* Content appears above the overlay */
@@ -29,7 +38,15 @@
                 color: white;
                 padding-top: 40vh; /* Adjust to position content vertically */
             }
-
+    
+            h1 {
+                font-size: 3em;
+                margin: 0;
+            }
+    
+            p {
+                font-size: 1.5em;
+            }
         </style>
 
     </head>
