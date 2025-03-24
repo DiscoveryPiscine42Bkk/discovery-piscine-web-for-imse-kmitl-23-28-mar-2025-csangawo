@@ -119,16 +119,45 @@
         .contact-link:hover {
             color: #cccccc;
         }
+
+        .contact-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .contact-link {
+            font-size: 2em;
+            color: #ffffff;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background-color: rgba(22, 22, 22, 0.8);
+            color: #cccccc;
+        }
     </style>
 </head>
 <body>
     <div id="navbar">
     </div>
 
-    <div class="parallax"></div>
+    <div class="parallax">
+        <div class="contact-center">
+            <a href="mailto:67160007@kmitl.ac.th" class="contact-link">Contact(email)</a>
+        </div>
+    </div>
 
     <div class="copyright">
-        <div>© csangwo 2025</div>  <a href="mailto:67160007@kmitl.ac.th" class="contact-link">Contact</a>
+        <div>© csangwo 2025</div>  
+        <a href="mailto:67160007@kmitl.ac.th" class="contact-link">Contact</a>
     </div>
 </body>
 </html>
