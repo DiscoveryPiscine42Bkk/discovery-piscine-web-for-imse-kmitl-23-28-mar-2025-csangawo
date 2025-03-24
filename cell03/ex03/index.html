@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Management</title>
+    
+    <style>
+        /* CSS styles for the task list */
+        #ft_list {
+            margin-bottom: 20px;
+        }
+        .task {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        .task:hover {
+            background-color: lightgreen;
+        }
+    </style>
 </head>
 <body>
 
     <div id="ft_list"></div>
     <button id="newButton">New</button>
 
-    <script src="taskManager"></script>
+    <script src="taskManager.js"></script>
 </body>
 </html>
