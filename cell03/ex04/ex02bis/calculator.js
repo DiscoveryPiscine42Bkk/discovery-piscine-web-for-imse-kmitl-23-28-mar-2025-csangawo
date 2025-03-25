@@ -26,7 +26,7 @@ $(document).ready(function () {
                 result = leftOperand * rightOperand;
                 break;
             case '/':
-                if (rightOperand === 0) {
+                if (rightOperand == 0) {
                     alert('It’s over 9000!');
                     return;
                 }
@@ -34,7 +34,10 @@ $(document).ready(function () {
                 break;
             case '%':
                 result = leftOperand % rightOperand;
-                break;
+                if (rightOperand == 0) {
+                    alert('It’s over 9000!');
+                    return;
+                }
             default:
                 alert('Invalid operator.');
                 return;
