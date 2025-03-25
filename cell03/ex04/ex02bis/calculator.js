@@ -5,6 +5,11 @@ $(document).ready(function () {
         const rightOperand = parseFloat($('#rightOperand').val());
         let result;
 
+        if (!Number.isInteger(leftOperand) || leftOperand < 0 || 
+        !Number.isInteger(rightOperand) || rightOperand < 0) {
+        alert('Error :(');
+        return;
+    }
         if (isNaN(leftOperand) || isNaN(rightOperand)) {
             alert('Please enter valid numbers.');
             return;
@@ -22,7 +27,7 @@ $(document).ready(function () {
                 break;
             case '/':
                 if (rightOperand === 0) {
-                    alert('Division by zero is not allowed.');
+                    alert('It’s over 9000!');
                     return;
                 }
                 result = leftOperand / rightOperand;
@@ -36,5 +41,9 @@ $(document).ready(function () {
         }
 
         alert('Result: ' + result);
+        
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
     });
 });
