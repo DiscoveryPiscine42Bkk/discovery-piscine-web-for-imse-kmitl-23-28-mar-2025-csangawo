@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    // Load tasks from cookies
     function loadTasks() {
         const tasks = getCookie("tasks");
         if (tasks) {
@@ -10,7 +9,6 @@ $(document).ready(function() {
         }
     }
 
-    // Save tasks to cookies
     function saveTasks() {
         const tasks = [];
         $('#ft_list div').each(function() {
@@ -19,7 +17,6 @@ $(document).ready(function() {
         setCookie("tasks", JSON.stringify(tasks), 365);
     }
 
-    // Set a cookie
     function setCookie(name, value, days) {
         const date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -27,7 +24,6 @@ $(document).ready(function() {
         document.cookie = name + "=" + value + ";" + expires + ";path=/";
     }
 
-    // Get a cookie
     function getCookie(name) {
         const decodedCookies = decodeURIComponent(document.cookie);
         const cookies = decodedCookies.split(';');
@@ -40,31 +36,26 @@ $(document).ready(function() {
         return "";
     }
 
-    // Add a new task to the DOM
     function addTaskToDOM(task) {
         const taskDiv = $('<div class="task"></div>').text(task);
         $('#ft_list').prepend(taskDiv);
-
-        // Remove task on click
         taskDiv.on('click', function() {
             if (confirm("Do you want to remove this task?")) {
                 taskDiv.remove();
-                saveTasks(); // Save updated tasks to cookies
+                saveTasks();
             }
         });
     }
 
-    // Event listener for the "New" button
     $('#newButton').on('click', function() {
         const newTask = prompt("Enter your new task:");
         if (newTask && newTask.trim() !== "") {
             addTaskToDOM(newTask);
-            saveTasks(); // Save the new task to cookies
+            saveTasks();
         } else {
             alert("Task cannot be empty!");
         }
     });
 
-    // Load tasks when the page is loaded
     loadTasks();
 });

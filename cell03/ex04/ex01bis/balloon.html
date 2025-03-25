@@ -52,6 +52,16 @@
                 $(this).css('height', size);
                 $(this).css('background-color', colors[currentColorIndex]);
             });
+
+            $('#balloon').on('dblclick', function() {
+                size = 200;
+                currentColorIndex = 0;
+                $(this).css({
+                    'width': size,
+                    'height': size,
+                    'background-color': colors[currentColorIndex]
+                });
+            });
         });
     </script>
 
