@@ -44,6 +44,7 @@ $(document).ready(function () {
         }
 
         alert('Result: ' + result);
+        console.log('Result:', result);
         
         setInterval(function() {
             alert('Please, use me...');
