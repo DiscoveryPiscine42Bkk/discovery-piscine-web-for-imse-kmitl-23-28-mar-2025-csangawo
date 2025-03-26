@@ -4,7 +4,7 @@ $(document).ready(function() {
         if (tasks) {
             const tasksArray = JSON.parse(tasks);
             tasksArray.forEach(task => {
-                addTaskToDOM(decodeURIComponent(task)); 
+                addTaskToDOM(task);
             });
         }
     }
@@ -12,7 +12,7 @@ $(document).ready(function() {
     function saveTasks() {
         const tasks = [];
         $('#ft_list div').each(function() {
-            tasks.push(encodeURIComponent($(this).text())); 
+            tasks.push($(this).text());
         });
         setCookie("tasks", JSON.stringify(tasks), 365);
     }
@@ -21,23 +21,21 @@ $(document).ready(function() {
         const date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         const expires = "expires=" + date.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        document.cookie = `${name}=${encodeURIComponent(value)};${expires};path=/`;
     }
 
     function getCookie(name) {
-        const decodedCookies = decodeURIComponent(document.cookie);
-        const cookies = decodedCookies.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            let c = cookies[i].trim();
-            if (c.indexOf(name + "=") === 0) {
-                return c.substring(name.length + 1 , c.length);
+        const decodedCookies = document.cookie.split(";").map(cookie => decodeURIComponent(cookie.trim()));
+        for (let i = 0; i < decodedCookies.length; i++) {
+            if (decodedCookies[i].indexOf(name + "=") === 0) {
+                return decodedCookies[i].substring(name.length + 1);
             }
         }
         return "";
     }
 
     function addTaskToDOM(task) {
-        const taskDiv = $('<div class="task"></div>').text(task);
+        const taskDiv = $('<div class="task"></div>').text(task); 
         $('#ft_list').prepend(taskDiv);
         taskDiv.on('click', function() {
             if (confirm("Do you want to remove this task?")) {
