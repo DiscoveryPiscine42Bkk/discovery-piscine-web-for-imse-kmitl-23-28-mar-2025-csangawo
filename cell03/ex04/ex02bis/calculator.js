@@ -1,4 +1,7 @@
-$(document).ready(function () {
+$(document).ready(function () {   
+     setInterval(function() {
+    alert('Please, use me...');
+    }, 30000);
     $('#calculateButton').click(function () {
         const leftOperand = parseFloat($('#leftOperand').val());
         const operator = $('#operator').val();
@@ -11,7 +14,7 @@ $(document).ready(function () {
         return;
     }
         if (isNaN(leftOperand) || isNaN(rightOperand)) {
-            alert('Please enter valid numbers.');
+            alert('Error :(');
             return;
         }
 
@@ -46,8 +49,7 @@ $(document).ready(function () {
         alert('Result: ' + result);
         console.log('Result:', result);
         
-        setInterval(function() {
-            alert('Please, use me...');
-        }, 30000);
+
     });
+
 });

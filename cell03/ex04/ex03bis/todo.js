@@ -4,7 +4,7 @@ $(document).ready(function() {
         if (tasks) {
             const tasksArray = JSON.parse(tasks);
             tasksArray.forEach(task => {
-                addTaskToDOM(task);
+                addTaskToDOM(decodeURIComponent(task)); 
             });
         }
     }
@@ -12,7 +12,7 @@ $(document).ready(function() {
     function saveTasks() {
         const tasks = [];
         $('#ft_list div').each(function() {
-            tasks.push($(this).text());
+            tasks.push(encodeURIComponent($(this).text())); 
         });
         setCookie("tasks", JSON.stringify(tasks), 365);
     }
@@ -30,7 +30,7 @@ $(document).ready(function() {
         for (let i = 0; i < cookies.length; i++) {
             let c = cookies[i].trim();
             if (c.indexOf(name + "=") === 0) {
-                return c.substring(name.length + 1, c.length);
+                return c.substring(name.length + 1 , c.length);
             }
         }
         return "";

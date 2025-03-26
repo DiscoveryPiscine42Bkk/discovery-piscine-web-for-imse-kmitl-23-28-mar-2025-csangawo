@@ -26,13 +26,13 @@
             let currentColorIndex = 0;
 
             $('#balloon').on('click', function() {
+                size += 10;
                 if (size >= 420) {
                     size = 200;
                     $(this).css('width', size);
                     $(this).css('height', size);
                     $(this).css('background-color', 'red');
                 } else {
-                    size += 10;
                     currentColorIndex = (currentColorIndex + 1) % colors.length;
                     $(this).css('width', size);
                     $(this).css('height', size);
@@ -47,14 +47,7 @@
                 $(this).css('height', size);
                 $(this).css('background-color', colors[currentColorIndex]);
             });
-            setInterval(function() {
-                if (size >= 420) {
-                    size = 200;
-                    $('#balloon').css('width', size);
-                    $('#balloon').css('height', size);
-                    $('#balloon').css('background-color', 'red');
-                }
-            }, 100);
+ 
         });
     </script>
 
