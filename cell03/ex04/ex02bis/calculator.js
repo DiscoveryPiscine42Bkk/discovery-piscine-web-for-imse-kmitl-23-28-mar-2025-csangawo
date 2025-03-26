@@ -3,9 +3,17 @@ $(document).ready(function () {
     alert('Please, use me...');
     }, 30000);
     $('#calculateButton').click(function () {
-        const leftOperand = parseFloat($('#leftOperand').val());
+        const leftOperandInput = $('#leftOperand').val();
+        const rightOperandInput = $('#rightOperand').val();
         const operator = $('#operator').val();
-        const rightOperand = parseFloat($('#rightOperand').val());
+        const isValidNumber = (input) => /^[0-9]+(\.[0-9]+)?$/.test(input);
+
+        if (!isValidNumber(leftOperandInput) || !isValidNumber(rightOperandInput)) {
+            alert('Error :(');
+            return;}
+            
+        const leftOperand = parseFloat(leftOperandInput);
+        const rightOperand = parseFloat(rightOperandInput);
         let result;
 
         if (!Number.isInteger(leftOperand) || leftOperand < 0 || 
@@ -41,9 +49,11 @@ $(document).ready(function () {
                     alert('It’s over 9000!');
                     return;
                 }
+                break;
             default:
                 alert('Invalid operator.');
                 return;
+
         }
 
         alert('Result: ' + result);
