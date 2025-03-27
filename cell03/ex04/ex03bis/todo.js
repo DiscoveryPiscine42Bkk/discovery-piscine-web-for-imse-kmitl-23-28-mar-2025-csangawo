@@ -34,6 +34,7 @@ $(document).ready(function() {
         return "";
     }
 
+    
     function addTaskToDOM(task) {
         const taskDiv = $('<div class="task"></div>').text(task); 
         $('#ft_list').prepend(taskDiv);

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Page Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .parallax {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding-top: 40vh;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .copyright {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-style: italic;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            color: #ffffff;
+            background: #161616;
+        }
+
+        .contact-link {
+            font-size: 16px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            color: #cccccc;
+        }
+
+        iframe {
+            border-radius: 10px;
+        }
+
+        .player-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            z-index: 3;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#main">Main</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <section id="main" class="parallax" style="background-image: url('https://www.bianquzy.com/wp-content/uploads/2020/01/6181_1415777444.png');">
+        <img src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png" alt="Image Above Main Content" style="position: relative; top: 20%; left: 50%; transform: translateX(-50%); width: 30%; height: 30%; max-height: 1000px; object-fit: cover; z-index: 2;">
+        <div class="content">
+            <h1>name</h1>
+            <p>Sound Engineer</p>
+        </div>
+    </section>
+
+    <section id="experiences" class="parallax" style="background-image: url('https://i.redd.it/mdc8wi3zg6r41.jpg');">
+        <div class="content">
+            <h1 style="font-size: 36px; color: rgb(255, 255, 255); text-shadow: 2px 2px 4px rgb(0, 0, 0);">Experiences</h1>
+        </div>
+        <div class="player-container">
+            <iframe 
+                width="300" 
+                height="300" 
+                scrolling="no" 
+                frameborder="no" 
+                allow="autoplay" 
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/therealraser/tinted-perspectivefeat-atiryc&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+            </iframe>
+            <iframe 
+                width="300" 
+                height="300" 
+                scrolling="no" 
+                frameborder="no" 
+                allow="autoplay" 
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/therealraser/focused-force&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+            </iframe>
+            <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Ftherealraser&color=orange_transparent&size=64" style="width: 64px; height: 64px;"></iframe>soundcloud
+        </div>
+    </section>
+
+    <section id="contact" class="parallax" style="background-image: url('https://images.ctfassets.net/8puu65w27ud0/2kTSmczTQKFZW0Li0fNM37/a8170e8d45267ec442c6b345afaf8f1a/Getting_started_with_plugins_-_Neural_DSP__8_.jpg');">
+        <div class="content">
+    <!-- Contact Section -->
+    <section id="contact" class="parallax" style="background-image: url('https://images.ctfassets.net/8puu65w27ud0/2kTSmczTQKFZW0Li0fNM37/a8170e8d45267ec442c6b345afaf8f1a/Getting_started_with_plugins_-_Neural_DSP__8_.jpg');">
+        <div class="content">
+            <p>Email: <a href="mailto:67160007@kmitl.ac.th" style="color: #ffffff; text-decoration: none;">xxxxxxx@xxxx.ac.th</a></p>
+            <p>No.xxx-xxxx-xxx</p>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <div>© csangwo 2025</div>
+        <a href="mailto:67160007@kmitl.ac.th" class="contact-link">Contact</a>
+    </div>
+</body>
+</html>
