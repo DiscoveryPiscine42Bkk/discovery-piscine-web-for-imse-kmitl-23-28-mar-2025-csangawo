@@ -6,7 +6,7 @@ $(document).ready(function () {
         const leftOperandInput = $('#leftOperand').val();
         const rightOperandInput = $('#rightOperand').val();
         const operator = $('#operator').val();
-        const isValidNumber = (input) => /^[0-9]+(\.[0-9]+)?$/.test(input); 
+        const isValidNumber = (input) => /^(0|[1-9][0-9]*)+(\.[0-9]+)?$/.test(input); 
     $()
 
         if (!isValidNumber(leftOperandInput) || !isValidNumber(rightOperandInput)) {
