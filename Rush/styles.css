@@ -145,3 +145,16 @@ iframe {
     z-index: 3;
     position: relative;
 }
+
+.title {
+    font-size: 50px;
+}
+
+.button {
+    background-color: #212121;
+    font-size: 20px;
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
